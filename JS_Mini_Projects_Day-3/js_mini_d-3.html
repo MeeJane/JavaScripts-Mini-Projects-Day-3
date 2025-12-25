@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Mini Projects Day-3</title>
+</head>
+
+<body>
+    <!-- Project-1 -->
+    <h4>Mini Project 1 : Simple Login System</h4>
+
+    <h2>Simple Login System</h2>
+
+    <p id="output1">Login Status:</p>
+
+    <script>
+        // Stored credentials
+        let storedUsername = "admin";
+        let storedPassword = "12345";
+
+        // User input using prompt
+        let username = prompt("Enter Username:");
+        let password = prompt("Enter Password:");
+
+        // Check login
+        if (username === storedUsername && password === storedPassword) {
+            document.getElementById("output1").innerText =
+                "Login Status: Login Successful";
+            console.log("Login Successful");
+        } else {
+            document.getElementById("output1").innerText =
+                "Login Status: Invalid credentials!";
+            console.log("Invalid credentials!");
+        }
+    </script>
+
+    <hr>
+
+    <!-- Project-2 -->
+    <h4>Mini Project 2: Traffic Light System</h4>
+
+    <h2>Traffic Light System</h2>
+
+    <p id="output2">Traffic Rule:</p>
+
+    <script>
+        // Get traffic light color from user
+        let color = prompt("Enter traffic light color (red, yellow, green):");
+
+        let message = "";
+
+        // Convert input to lowercase for safety
+        if (color !== null) {
+            color = color.toLowerCase();
+
+            if (color === "red") {
+                message = "Stop!";
+            } else if (color === "yellow") {
+                message = "Slow down!";
+            } else if (color === "green") {
+                message = "Go!";
+            } else {
+                message = "Invalid color!";
+            }
+        } else {
+            message = "Invalid color!";
+        }
+
+        // Display output on page
+        document.getElementById("output2").innerText =
+            "Traffic Rule: " + message;
+
+        // Console output
+        console.log(message);
+    </script>
+
+    <hr>
+
+    <!-- Project-3 -->
+    <h4>Mini Project 3 : Number Guessing Game</h4>
+
+
+    <h2>Number Guessing Game</h2>
+
+    <p id="output3">Result:</p>
+
+    <script>
+        // Stored secret number
+        let secretNumber = 7;
+
+        // User input
+        let guess = Number(prompt("Guess a number between 1 and 10:"));
+
+        let message3 = "";
+
+        // Check guess
+        if (guess === secretNumber) {
+            message3 = "Correct! You guessed the number.";
+        } else if (guess > secretNumber) {
+            message3 = "Too high! Try again.";
+        } else if (guess < secretNumber) {
+            message3 = "Too low! Try again.";
+        } else {
+            message3 = "Invalid input!";
+        }
+
+        // Display output on page
+        document.getElementById("output3").innerText =
+            "Result: " + message3;
+
+        // Console output
+        console.log(message3);
+    </script>
+
+    <hr>
+
+    <!-- Project-4 -->
+    <h4>Mini Project 4 : Age Eligibility Checker </h4>
+
+    <h2>Age Eligibility Checker</h2>
+
+    <p id="output4">Eligibility Status:</p>
+
+    <script>
+
+        let age4 = Number(prompt("Enter your age:"));
+
+        let message4 = "";
+
+        if (age4 < 18) {
+            message4 = "You are not eligible for these activities.";
+        } else {
+            if (age4 >= 18) {
+                message4 += "Eligible to vote. <br>";
+                console.log("Eligible to vote.");
+            }
+            if (age4 >= 21) {
+                message4 += "Can get a license to start a company. <br>";
+                console.log("Can get a license to start a company. ");
+            }
+            if (age4 >= 25) {
+                message4 += "Can rent a car. <br>";
+                console.log("Can rent a car.");
+            }
+        }
+
+
+        document.getElementById("output4").innerText =
+            "Eligibility Status: " + message4;
+
+
+        if (age4 < 18) {
+            console.log("You are not eligible for these activities.");
+        }
+    </script>
+    <hr>
+
+    <!-- Project-5 -->
+    <h4>Mini Project 5: Grading System with Remarks </h4>
+
+    <h2>Grading System with Remarks</h2>
+
+    <p id="output5">Result:</p>
+
+    <script>
+        // Get marks from user
+        let marks5 = Number(prompt("Enter your marks (0–100):"));
+
+        let grade5 = "";
+        let remark5 = "";
+
+        if (marks5 >= 90 && marks5 <= 100) {
+            grade5 = "A+";
+            remark5 = "Excellent";
+        } else if (marks5 >= 80 && marks5 <= 89) {
+            grade5 = "A";
+            remark5 = "Good";
+        } else if (marks >= 70 && marks5 <= 79) {
+            grade5 = "B";
+            remark5 = "Average";
+        } else if (marks5 >= 60 && marks5 <= 69) {
+            grade5 = "C";
+            remark5 = "Poor";
+        } else if (marks5 >= 0 && marks5 < 60) {
+            grade5 = "F";
+            remark5 = "Fail";
+        } else {
+            grade5 = "Invalid";
+            remark5 = "Marks must be between 0 and 100";
+        }
+
+        // Display output on page
+        document.getElementById("output5").innerText =
+            "Grade: " + grade5 + " | Remark: " + remark5;
+
+        // Console output
+        console.log("Grade:", grade5);
+        console.log("Remark:", remark5);
+    </script>
+    <hr>
+
+    <!-- Project-6 -->
+    <h4>Mini Project 6: Rock-Paper-Scissors Game (1 Player vs Computer)</h4>
+    
+    <h2>Rock-Paper-Scissors Game</h2>
+
+    <p id="output6">Game Result:</p>
+
+    <script>
+        // Player choice
+        let playerChoice = prompt("Choose rock, paper, or scissors:").toLowerCase();
+
+        // Computer choice
+        let choices = ["rock", "paper", "scissors"];
+        let computerChoice = choices[Math.floor(Math.random() * 3)];
+
+        let result6 = "";
+
+        // Determine winner
+        if (playerChoice === computerChoice) {
+            result6 = "It's a tie!";
+        } else if (
+            (playerChoice === "rock" && computerChoice === "scissors") ||
+            (playerChoice === "paper" && computerChoice === "rock") ||
+            (playerChoice === "scissors" && computerChoice === "paper")
+        ) {
+            result6 = "You win!";
+        } else if (
+            playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissors"
+        ) {
+            result6 = "Computer wins!";
+        } else {
+            result6 = "Invalid input!";
+        }
+
+        // Display output on page
+        document.getElementById("output6").innerText =
+            "You chose: " + playerChoice + 
+            " | Computer chose: " + computerChoice + 
+            " | Result: " + result6;
+
+        // Console output
+        console.log("Player:", playerChoice);
+        console.log("Computer:", computerChoice);
+        console.log("Result:", result6);
+    </script>
+
+</body>
+
+</html>
